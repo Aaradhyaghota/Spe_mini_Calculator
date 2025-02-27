@@ -25,6 +25,25 @@ pipeline {
             }
         }
 
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    // Build Docker image
+                    docker.build("${DOCKER_IMAGE_NAME}", '.')
+                }
+            }
+        }
+//         stage('Push Docker Images') {
+//             steps {
+//                 script{
+//                     docker.withRegistry('', 'DockerHubCred') {
+//                         sh 'docker tag calculator iiitb/calculator:latest'
+//                         sh 'docker push iiitb/calculator'
+//                     }
+//                 }
+//             }
+//         }
+
 
     }
 }
