@@ -33,16 +33,21 @@ pipeline {
                 }
             }
         }
-//         stage('Push Docker Images') {
-//             steps {
-//                 script{
-//                     docker.withRegistry('', 'DockerHubCred') {
-//                         sh 'docker tag calculator iiitb/calculator:latest'
-//                         sh 'docker push iiitb/calculator'
-//                     }
-//                 }
-//             }
-//         }
+
+        stage('Push Docker Images') {
+            steps {
+                script {
+                    // Authenticate with Docker Hub using Jenkins credentials
+                    docker.withRegistry('', 'dockerhub-credentials') {  // Use the credentials ID from Jenkins
+                        // Tag the Docker image with your Docker Hub repository name
+                        sh 'docker tag calculator aaradhyaghota/calculator:latest'
+                        // Push the image to Docker Hub
+                        sh 'docker push aaradhyaghota/calculator:latest'
+                    }
+                }
+            }
+        }
+
 
 
     }
