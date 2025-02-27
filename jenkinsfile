@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     // Checkout the code from the GitHub repository
-                    it branch: 'master', url: "${GITHUB_REPO_URL}"
+                    checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: "${GITHUB_REPO_URL}"]]])
                 }
             }
         }
