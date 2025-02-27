@@ -5,7 +5,7 @@ pipeline {
     }
     environment {
         DOCKER_IMAGE_NAME = 'calculator'
-        GITHUB_REPO_URL = 'https://github.com/Aaradhyaghota/Spe_mini_Calculator'
+        GITHUB_REPO_URL = 'https://github.com/Aaradhyaghota/Spe_mini_Calculator.git'
     }
 
     stages {
@@ -25,5 +25,7 @@ pipeline {
                 sh 'mvn test'
             }
         }
+
+
     }
 }
