@@ -13,18 +13,15 @@ pipeline {
             steps {
                 script {
                     // Checkout the code from the GitHub repository
-                    checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: "${GITHUB_REPO_URL}"]]])
+                    git branch: 'master', url: "${GITHUB_REPO_URL}"
+                    //checkout([$class: 'GitSCM', branches: [[name: '*/master']], userRemoteConfigs: [[url: "${GITHUB_REPO_URL}"]]])
                 }
             }
         }
 
-        stage('Build') {
+        stage('Build & test') {
             steps {
                 sh 'mvn clean install'
-            }
-        }
-        stage('Test') {
-            steps {
                 sh 'mvn test'
             }
         }
