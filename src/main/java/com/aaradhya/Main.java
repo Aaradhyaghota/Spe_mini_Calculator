@@ -31,7 +31,7 @@ public class Main {
                 "1: Square root\n" +
                 "2: Factorial\n" +
                 "3: Natural logarithm\n" +
-                "4: Power function \n");
+                "4: Power function");
         int choice = sc.nextInt();
 
         switch (choice) {
