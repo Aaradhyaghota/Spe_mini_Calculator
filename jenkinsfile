@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     // Checkout the code from the GitHub repository
-                    it branch: 'main', url: "${GITHUB_REPO_URL}"
+                    it branch: 'master', url: "${GITHUB_REPO_URL}"
                 }
             }
         }
