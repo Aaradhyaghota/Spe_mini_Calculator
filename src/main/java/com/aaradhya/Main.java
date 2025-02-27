@@ -17,9 +17,9 @@ public class Main {
         return result;
     }
 
-    // public static double naturalLog(double x) {
-    //     return Math.log(x);
-    // }
+    public static double naturalLog(double x) {
+        return Math.log(x);
+    }
 
     public static double power(double base, double exponent) {
         return Math.pow(base, exponent);
