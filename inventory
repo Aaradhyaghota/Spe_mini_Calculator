@@ -1,3 +1,3 @@
 [all]
-localhost ansible_ssh_user=aaradhyaghota ansible_ssh_pass=ubuntu@2911
+localhost ansible_ssh_user=aaradhya-ghota ansible_ssh_pass=ubuntu@2911
 
