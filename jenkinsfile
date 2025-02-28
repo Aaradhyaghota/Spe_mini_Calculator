@@ -55,6 +55,7 @@ pipeline {
                                 ansiblePlaybook(
                                     playbook: 'deploy.yml',   // This is the path to the playbook
                                     inventory: 'inventory'    // This is the path to the inventory file
+                                    credentialsId: 'ansible-ssh-credentials'
                                 )
                             }
                         }
