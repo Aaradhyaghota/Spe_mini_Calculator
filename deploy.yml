@@ -1,0 +1,32 @@
+- name: Deploy Docker Container
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Ensure Docker is Installed
+      apt:
+        name: docker.io
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Pull Docker image
+      community.docker.docker_image:
+        name: aaradhyaghota/calculator
+        tag: latest
+        source: pull
+
+    - name: Stop and remove existing container (If running)
+      community.docker.docker_container:
+        name: calculator
+        state: absent
+        force_kill: yes
+
+    - name: Run the new container
+      community.docker.docker_container:
+        name: calculator
+        image: aaradhyaghota/calculator:latest
+        state: started
+        restart_policy: always
+        ports:
+          - "8080:8080"
+        interactive: yes
+        tty: yes
