@@ -54,7 +54,7 @@ pipeline {
                             withEnv(["ANSIBLE_HOST_KEY_CHECKING=False"]) {
                                 ansiblePlaybook(
                                     playbook: 'deploy.yml',   // This is the path to the playbook
-                                    inventory: 'inventory1'    // This is the path to the inventory file
+                                    inventory: 'inventory'    // This is the path to the inventory file
                                 )
                             }
                         }
