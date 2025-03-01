@@ -27,11 +27,15 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the choice: \n" +
-                "1: Square root\n" +
-                "2: Factorial\n" +
-                "3: Natural logarithm\n" +
-                "4: Power function");
+
+        System.out.println("Welcome to the scientific Calculator! \n");
+
+        System.out.println("""
+                Enter the choice:\s
+                1: Square root
+                2: Factorial
+                3: Natural logarithm
+                4: Power function""");
         int choice = sc.nextInt();
 
         switch (choice) {
@@ -62,3 +66,8 @@ public class Main {
         sc.close();
     }
 }
+
+//command to run on terminal
+// sudo docker ps -a
+//sudo docker logs calculator
+//sudo docker attach calculator
