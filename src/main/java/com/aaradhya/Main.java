@@ -27,7 +27,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the choice: " +"\n" +
+        System.out.println("Enter the choice: \n" +
                 "1: Square root\n" +
                 "2: Factorial\n" +
                 "3: Natural logarithm\n" +
