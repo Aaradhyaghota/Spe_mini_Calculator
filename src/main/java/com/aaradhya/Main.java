@@ -27,42 +27,48 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+        int choice;
         System.out.println("Welcome to the scientific Calculator!");
 
-        System.out.println("""
+        do {
+            System.out.println("""
                 Enter the choice:\s
                 1: Square root
                 2: Factorial
                 3: Natural logarithm
-                4: Power function""");
-        int choice = sc.nextInt();
+                4: Power function
+                5: Exit""");
+            choice = sc.nextInt();
 
-        switch (choice) {
-            case 1:
-                System.out.println("Enter a number for square root:");
-                double numSqrt = sc.nextDouble();
-                System.out.println("Result: " + sqrt(numSqrt));
-                break;
-            case 2:
-                System.out.println("Enter a number for factorial:");
-                int numFact = sc.nextInt();
-                System.out.println("Result: " + factorial(numFact));
-                break;
-            case 3:
-                System.out.println("Enter a number for natural logarithm:");
-                double numLn = sc.nextDouble();
-                System.out.println("Result: " + naturalLog(numLn));
-                break;
-            case 4:
-                System.out.println("Enter the base and exponent:");
-                double base = sc.nextDouble();
-                double exponent = sc.nextDouble();
-                System.out.println("Result: " + power(base, exponent));
-                break;
-            default:
-                System.out.println("Invalid choice!");
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter a number for square root:");
+                    double numSqrt = sc.nextDouble();
+                    System.out.println("Result: " + sqrt(numSqrt));
+                    break;
+                case 2:
+                    System.out.println("Enter a number for factorial:");
+                    int numFact = sc.nextInt();
+                    System.out.println("Result: " + factorial(numFact));
+                    break;
+                case 3:
+                    System.out.println("Enter a number for natural logarithm:");
+                    double numLn = sc.nextDouble();
+                    System.out.println("Result: " + naturalLog(numLn));
+                    break;
+                case 4:
+                    System.out.println("Enter the base and exponent:");
+                    double base = sc.nextDouble();
+                    double exponent = sc.nextDouble();
+                    System.out.println("Result: " + power(base, exponent));
+                    break;
+                case 5:
+                    System.out.println("Exiting the program. Goodbye!");
+                    break;
+                default:
+                    System.out.println("Invalid choice! Please try again.");
             }
+        } while (choice != 5);
         sc.close();
     }
 }
