@@ -28,7 +28,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Welcome to the scientific Calculator! \n");
+        System.out.println("Welcome to the scientific Calculator!");
 
         System.out.println("""
                 Enter the choice:\s
