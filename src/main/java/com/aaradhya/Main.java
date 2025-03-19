@@ -77,3 +77,4 @@ public class Main {
 // sudo docker ps -a
 //sudo docker logs calculator
 //sudo docker attach calculator
+//sudo docker exec -it calculator java -jar app.jar
