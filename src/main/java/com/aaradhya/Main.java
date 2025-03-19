@@ -71,7 +71,7 @@ public class Main {
         }while
         (choice != 5);
         sc.close();
-    }
+    }//
 }
 
 //command to run on terminal
