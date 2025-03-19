@@ -68,7 +68,8 @@ public class Main {
                 default:
                     System.out.println("Invalid choice! Please try again.");
             }
-        }while(choice != 5);
+        }while
+        (choice != 5);
         sc.close();
     }
 }
