@@ -1,12 +1,14 @@
 - name: Deploy Docker Container
   hosts: all
-  become: yes
+  # this defines which hosts (machines) the tasks in this playbook will be applied to.
+  # all refers to all hosts listed in the inventory file. In your inventory, this is likely pointing to localhost or any other machine.
+  become: yes #This ensures that the tasks will be executed with elevated privileges (like sudo on Linux
   tasks:
     - name: Ensure Docker is Installed
-      apt:
+      apt: #Ansible to use the apt package manager
         name: docker.io
-        state: present
-      when: ansible_os_family == "Debian"
+        state: present #ensures that the Docker package is installed. If Docker is not installed, Ansible will install it.
+      when: ansible_os_family == "Debian" #task only runs if the operating system on the target machine is Debian-based (such as Ubuntu).
 
     - name: Pull Docker image
       community.docker.docker_image:
